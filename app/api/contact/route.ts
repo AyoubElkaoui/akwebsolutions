@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const SUPPORT_KEYWORDS = [
   "bug",
   "fout",
@@ -66,6 +64,7 @@ function detectCategory(bericht: string): { email: string; label: string } {
 
 export async function POST(request: Request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { naam, email, bericht } = await request.json();
 
     if (!naam || !email || !bericht) {
