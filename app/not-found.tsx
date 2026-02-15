@@ -55,7 +55,7 @@ export default function NotFound() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-12 rounded-full border-white/10 bg-white/5 px-8 font-semibold text-white hover:bg-white/10"
+                className="h-12 rounded-full border-[#7B4FB5]/50 bg-[#7B4FB5]/10 px-8 font-semibold text-white hover:border-[#7B4FB5]/70 hover:bg-[#7B4FB5]/20"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Contact opnemen

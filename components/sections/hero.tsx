@@ -449,7 +449,7 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="h-14 rounded-full border-2 border-white/10 bg-white/5 px-10 text-base font-semibold text-white backdrop-blur-xl transition-all hover:border-white/20 hover:bg-white/10"
+              className="h-14 rounded-full border-2 border-[#7B4FB5]/50 bg-[#7B4FB5]/10 px-10 text-base font-semibold text-white backdrop-blur-xl transition-all hover:border-[#7B4FB5]/70 hover:bg-[#7B4FB5]/20"
             >
               Bekijk portfolio
             </Button>

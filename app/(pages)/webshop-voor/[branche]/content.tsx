@@ -218,7 +218,7 @@ export function WebshopIndustryContent({
             <Link href="/portfolio">
               <Button
                 variant="outline"
-                className="h-12 rounded-full border-white/20 bg-transparent px-8 text-base font-semibold text-white hover:bg-white/10 transition-colors"
+                className="h-12 rounded-full border-[#7B4FB5]/50 bg-[#7B4FB5]/10 px-8 text-base font-semibold text-white hover:border-[#7B4FB5]/70 hover:bg-[#7B4FB5]/20 transition-colors"
               >
                 Bekijk Portfolio
               </Button>
@@ -280,7 +280,8 @@ export function WebshopIndustryContent({
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-400">
               Herken je deze uitdagingen? Wij lossen ze op met een webshop die
-              specifiek is afgestemd op de {industry.naam.toLowerCase()} branche.
+              specifiek is afgestemd op de {industry.naam.toLowerCase()}{" "}
+              branche.
             </p>
           </motion.div>
 
@@ -318,7 +319,8 @@ export function WebshopIndustryContent({
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-400">
               Op maat gemaakte oplossingen voor de {industry.naam.toLowerCase()}{" "}
-              branche. Elke functie is ontworpen om jouw webshop te laten groeien.
+              branche. Elke functie is ontworpen om jouw webshop te laten
+              groeien.
             </p>
           </motion.div>
 
@@ -400,8 +402,8 @@ export function WebshopIndustryContent({
               Hoe Werkt Het?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-              Van eerste idee tot een draaiende webshop — in vier overzichtelijke
-              stappen.
+              Van eerste idee tot een draaiende webshop — in vier
+              overzichtelijke stappen.
             </p>
           </motion.div>
 
@@ -478,8 +480,8 @@ export function WebshopIndustryContent({
                 Andere Branches
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-                We bouwen ook websites en webshops voor andere branches.
-                Ontdek wat we voor jouw sector kunnen betekenen.
+                We bouwen ook websites en webshops voor andere branches. Ontdek
+                wat we voor jouw sector kunnen betekenen.
               </p>
             </motion.div>
 
@@ -561,7 +563,7 @@ export function WebshopIndustryContent({
                 <a href="tel:+31685722387">
                   <Button
                     variant="outline"
-                    className="h-12 rounded-full border-white/20 bg-transparent px-8 text-base font-semibold text-white hover:bg-white/10 transition-colors"
+                    className="h-12 rounded-full border-[#7B4FB5]/50 bg-[#7B4FB5]/10 px-8 text-base font-semibold text-white hover:border-[#7B4FB5]/70 hover:bg-[#7B4FB5]/20 transition-colors"
                   >
                     <Phone className="mr-2 h-4 w-4" />
                     Bel Direct

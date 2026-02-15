@@ -507,7 +507,7 @@ export function OverOnsContent() {
               <Link href="/diensten">
                 <Button
                   size="lg"
-                  className="rounded-full border-2 border-white/20 bg-white/5 text-white backdrop-blur-sm hover:border-white/30 hover:bg-white/10"
+                  className="rounded-full border-2 border-[#7B4FB5]/50 bg-[#7B4FB5]/10 text-white backdrop-blur-sm hover:border-[#7B4FB5]/70 hover:bg-[#7B4FB5]/20"
                 >
                   Bekijk mijn diensten
                 </Button>

@@ -10,7 +10,8 @@ const projects = [
     id: 1,
     title: "E-commerce Platform",
     category: "Web Development",
-    description: "Moderne webshop met headless CMS en real-time inventory management. Gebouwd met Next.js en Shopify.",
+    description:
+      "Moderne webshop met headless CMS en real-time inventory management. Gebouwd met Next.js en Shopify.",
     image: "bg-gradient-to-br from-purple-500 to-pink-500",
     tags: ["Next.js", "Shopify", "TypeScript"],
     metrics: [
@@ -22,7 +23,8 @@ const projects = [
     id: 2,
     title: "SaaS Dashboard",
     category: "Web App",
-    description: "Complexe data visualisatie dashboard voor enterprise klanten met real-time analytics en rapportage.",
+    description:
+      "Complexe data visualisatie dashboard voor enterprise klanten met real-time analytics en rapportage.",
     image: "bg-gradient-to-br from-blue-500 to-cyan-500",
     tags: ["React", "Node.js", "PostgreSQL"],
     metrics: [
@@ -34,7 +36,8 @@ const projects = [
     id: 3,
     title: "Corporate Website",
     category: "Branding & Web",
-    description: "Premium corporate website met focus op SEO en conversion optimization. Volledig op maat gemaakt design.",
+    description:
+      "Premium corporate website met focus op SEO en conversion optimization. Volledig op maat gemaakt design.",
     image: "bg-gradient-to-br from-indigo-500 to-purple-600",
     tags: ["Next.js", "Sanity CMS", "SEO"],
     metrics: [
@@ -83,7 +86,8 @@ export function FeaturedWork() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-lg text-muted-foreground"
               >
-                Van startup tot enterprise - we hebben oplossingen gebouwd die écht impact maken.
+                Van startup tot enterprise - we hebben oplossingen gebouwd die
+                écht impact maken.
               </motion.p>
             </div>
 
@@ -94,7 +98,11 @@ export function FeaturedWork() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <Link href="/portfolio">
-                <Button variant="outline" size="lg" className="group">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="group rounded-full border-[#7B4FB5]/50 bg-[#7B4FB5]/10 text-white hover:border-[#7B4FB5]/70 hover:bg-[#7B4FB5]/20"
+                >
                   Bekijk alle projecten
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -113,7 +121,9 @@ export function FeaturedWork() {
             transition={{ duration: 0.5 }}
             className="group relative overflow-hidden rounded-3xl lg:row-span-2"
           >
-            <div className={`absolute inset-0 ${projects[0].image} transition-transform duration-500 group-hover:scale-105`} />
+            <div
+              className={`absolute inset-0 ${projects[0].image} transition-transform duration-500 group-hover:scale-105`}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
             <div className="relative flex h-full min-h-[600px] flex-col justify-end p-8 lg:p-10">
@@ -145,7 +155,9 @@ export function FeaturedWork() {
               <div className="grid grid-cols-2 gap-4 border-t border-white/20 pt-6">
                 {projects[0].metrics.map((metric) => (
                   <div key={metric.label}>
-                    <div className="text-2xl font-bold text-white">{metric.value}</div>
+                    <div className="text-2xl font-bold text-white">
+                      {metric.value}
+                    </div>
                     <div className="text-sm text-white/70">{metric.label}</div>
                   </div>
                 ))}
@@ -170,7 +182,9 @@ export function FeaturedWork() {
                 transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
                 className="group relative overflow-hidden rounded-3xl"
               >
-                <div className={`absolute inset-0 ${project.image} transition-transform duration-500 group-hover:scale-105`} />
+                <div
+                  className={`absolute inset-0 ${project.image} transition-transform duration-500 group-hover:scale-105`}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
                 <div className="relative flex min-h-[280px] flex-col justify-end p-6 lg:p-8">
@@ -202,8 +216,12 @@ export function FeaturedWork() {
                   <div className="flex gap-6 border-t border-white/20 pt-4">
                     {project.metrics.map((metric) => (
                       <div key={metric.label}>
-                        <div className="text-lg font-bold text-white">{metric.value}</div>
-                        <div className="text-xs text-white/70">{metric.label}</div>
+                        <div className="text-lg font-bold text-white">
+                          {metric.value}
+                        </div>
+                        <div className="text-xs text-white/70">
+                          {metric.label}
+                        </div>
                       </div>
                     ))}
                   </div>

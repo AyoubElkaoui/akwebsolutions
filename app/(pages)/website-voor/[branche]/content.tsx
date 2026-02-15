@@ -168,7 +168,7 @@ export function IndustryContent({
           >
             {(() => {
               const IconComponent = getIcon(
-                industry.oplossingen[0]?.icon || "Star"
+                industry.oplossingen[0]?.icon || "Star",
               );
               return <IconComponent className="h-4 w-4" />;
             })()}
@@ -211,7 +211,7 @@ export function IndustryContent({
             <Link href="/portfolio">
               <Button
                 variant="outline"
-                className="h-12 rounded-full border-white/20 bg-transparent px-8 text-base font-semibold text-white hover:bg-white/10 transition-colors"
+                className="h-12 rounded-full border-[#7B4FB5]/50 bg-[#7B4FB5]/10 px-8 text-base font-semibold text-white hover:border-[#7B4FB5]/70 hover:bg-[#7B4FB5]/20 transition-colors"
               >
                 Bekijk Portfolio
               </Button>
@@ -255,19 +255,23 @@ export function IndustryContent({
               Waarom een Website voor de{" "}
               <span className="text-purple-400">{industry.naam}</span>?
             </h2>
-            {industry.beschrijving.split(". ").reduce<string[][]>(
-              (acc, sentence, i) => {
-                const paragraphIndex = i < Math.ceil(industry.beschrijving.split(". ").length / 2) ? 0 : 1;
+            {industry.beschrijving
+              .split(". ")
+              .reduce<string[][]>((acc, sentence, i) => {
+                const paragraphIndex =
+                  i < Math.ceil(industry.beschrijving.split(". ").length / 2)
+                    ? 0
+                    : 1;
                 if (!acc[paragraphIndex]) acc[paragraphIndex] = [];
                 acc[paragraphIndex].push(sentence);
                 return acc;
-              },
-              []
-            ).map((sentences, i) => (
-              <p key={i} className="text-gray-400 text-lg leading-relaxed">
-                {sentences.join(". ")}{sentences[sentences.length - 1]?.endsWith(".") ? "" : "."}
-              </p>
-            ))}
+              }, [])
+              .map((sentences, i) => (
+                <p key={i} className="text-gray-400 text-lg leading-relaxed">
+                  {sentences.join(". ")}
+                  {sentences[sentences.length - 1]?.endsWith(".") ? "" : "."}
+                </p>
+              ))}
           </motion.div>
         </div>
       </section>
@@ -329,8 +333,8 @@ export function IndustryContent({
               Onze Oplossingen
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-              Op maat gemaakte oplossingen voor de {industry.naam.toLowerCase()}.
-              Alles wat je nodig hebt om online succesvol te zijn.
+              Op maat gemaakte oplossingen voor de {industry.naam.toLowerCase()}
+              . Alles wat je nodig hebt om online succesvol te zijn.
             </p>
           </motion.div>
 
@@ -499,7 +503,7 @@ export function IndustryContent({
             <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {relatedIndustries.map((related, i) => {
                 const IconComponent = getIcon(
-                  related.oplossingen[0]?.icon || "Star"
+                  related.oplossingen[0]?.icon || "Star",
                 );
                 return (
                   <motion.div
@@ -561,8 +565,8 @@ export function IndustryContent({
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-gray-400">
                 Plan een gratis en vrijblijvend adviesgesprek. We bespreken jouw
-                wensen en ik laat zien hoe ik jouw{" "}
-                {industry.naam.toLowerCase()}bedrijf online kan laten groeien.
+                wensen en ik laat zien hoe ik jouw {industry.naam.toLowerCase()}
+                bedrijf online kan laten groeien.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link href="/contact">
@@ -574,7 +578,7 @@ export function IndustryContent({
                 <a href="tel:+31685722387">
                   <Button
                     variant="outline"
-                    className="h-12 rounded-full border-white/20 bg-transparent px-8 text-base font-semibold text-white hover:bg-white/10 transition-colors"
+                    className="h-12 rounded-full border-[#7B4FB5]/50 bg-[#7B4FB5]/10 px-8 text-base font-semibold text-white hover:border-[#7B4FB5]/70 hover:bg-[#7B4FB5]/20 transition-colors"
                   >
                     <Phone className="mr-2 h-4 w-4" />
                     Bel Direct

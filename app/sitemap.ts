@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { getAllCaseStudySlugs } from "@/lib/case-studies";
 import { locations } from "@/lib/locations";
 import { serviceTypes } from "@/lib/service-locations";
 import { websiteIndustries, webshopIndustries } from "@/lib/industries";
@@ -32,6 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const websiteIndustryPages = websiteIndustries.map((ind) => ({
     url: `${baseUrl}/website-voor-${ind.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const caseStudyPages = getAllCaseStudySlugs().map((slug) => ({
+    url: `${baseUrl}/portfolio/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
@@ -108,6 +116,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...blogPosts,
+    ...caseStudyPages,
     ...locationPages,
     ...serviceLocationPages,
     ...websiteIndustryPages,
