@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { StructuredData } from "@/components/structured-data";
 import { CookieBanner } from "@/components/cookie-banner";
+import { GoogleAnalytics } from "@/components/google-analytics";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -111,6 +112,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <GoogleAnalytics />
         <StructuredData />
         {children}
         <CookieBanner />
