@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 import { useState } from "react";
 
@@ -385,79 +386,97 @@ export function DienstenContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
-            className="mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition-colors duration-300 hover:border-[#7B4FB5]/30 hover:bg-white/[0.05] md:p-10"
+            className="group/service mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:border-[#7B4FB5]/30 hover:bg-white/[0.05]"
           >
-            <div className="mb-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 to-[#7B4FB5]/20">
-                  <Code2 className="h-7 w-7 text-[#B39DDB]" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">
-                    Website Laten Maken
-                  </h3>
-                  <p className="text-sm text-[#B39DDB]/70">
-                    Moderne, snelle en SEO-vriendelijke websites met Next.js
-                  </p>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="text-3xl font-bold text-[#B39DDB]">95+</div>
-                <div className="text-xs text-white/40">PageSpeed Score</div>
-              </div>
-            </div>
-
-            <p className="mb-6 text-white/60 leading-relaxed">
-              Op maat gemaakte websites met Next.js, React en TypeScript — geen
-              overbodige code, geen trage plugins. Met server-side rendering en
-              mobile-first design laadt jouw website razendsnel en scoort
-              consistent 90+ op Google PageSpeed. Inclusief headless CMS zodat
-              je zelf eenvoudig content kunt beheren.
-            </p>
-
-            <div className="mb-6 grid gap-3 sm:grid-cols-2">
-              {[
-                "Next.js & React development",
-                "Server-side rendering (SSR) & SSG",
-                "Progressive Web Apps (PWA)",
-                "Responsive & mobile-first design",
-                "API integraties & headless CMS",
-                "Geoptimaliseerd voor Core Web Vitals",
-              ].map((feature) => (
-                <div key={feature} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B39DDB]" />
-                  <span className="text-sm text-white/70">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mb-6 flex flex-wrap gap-2">
-              {[
-                "Next.js",
-                "React",
-                "TypeScript",
-                "Node.js",
-                "Tailwind CSS",
-                "Vercel",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60"
-                >
-                  {tech}
+            <div className="relative aspect-[21/9] overflow-hidden">
+              <Image
+                src="/images/web-development.jpg"
+                alt="Web development werkplek"
+                fill
+                className="object-cover object-center transition-transform duration-700 group-hover/service:scale-105"
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
+              <div className="absolute bottom-4 left-6 z-10">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-4 py-1.5 text-sm font-semibold text-[#B39DDB] backdrop-blur-sm">
+                  <Code2 className="h-4 w-4" />
+                  Populairste dienst
                 </span>
-              ))}
+              </div>
             </div>
+            <div className="p-8 md:p-10">
+              <div className="mb-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 to-[#7B4FB5]/20">
+                    <Code2 className="h-7 w-7 text-[#B39DDB]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">
+                      Website Laten Maken
+                    </h3>
+                    <p className="text-sm text-[#B39DDB]/70">
+                      Moderne, snelle en SEO-vriendelijke websites met Next.js
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-3xl font-bold text-[#B39DDB]">95+</div>
+                  <div className="text-xs text-white/40">PageSpeed Score</div>
+                </div>
+              </div>
 
-            <Link href="/diensten/website-laten-maken">
-              <Button
-                size="sm"
-                className="group rounded-full bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white"
-              >
-                Meer over websites
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
+              <p className="mb-6 text-white/60 leading-relaxed">
+                Op maat gemaakte websites met Next.js, React en TypeScript —
+                geen overbodige code, geen trage plugins. Met server-side
+                rendering en mobile-first design laadt jouw website razendsnel
+                en scoort consistent 90+ op Google PageSpeed. Inclusief headless
+                CMS zodat je zelf eenvoudig content kunt beheren.
+              </p>
+
+              <div className="mb-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Next.js & React development",
+                  "Server-side rendering (SSR) & SSG",
+                  "Progressive Web Apps (PWA)",
+                  "Responsive & mobile-first design",
+                  "API integraties & headless CMS",
+                  "Geoptimaliseerd voor Core Web Vitals",
+                ].map((feature) => (
+                  <div key={feature} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B39DDB]" />
+                    <span className="text-sm text-white/70">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mb-6 flex flex-wrap gap-2">
+                {[
+                  "Next.js",
+                  "React",
+                  "TypeScript",
+                  "Node.js",
+                  "Tailwind CSS",
+                  "Vercel",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <Link href="/diensten/website-laten-maken">
+                <Button
+                  size="sm"
+                  className="group rounded-full bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white"
+                >
+                  Meer over websites
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
 
           {/* ── Service 2: SEO Optimalisatie ── */}
@@ -466,79 +485,91 @@ export function DienstenContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition-colors duration-300 hover:border-[#7B4FB5]/30 hover:bg-white/[0.05] md:p-10"
+            className="group/service mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:border-[#7B4FB5]/30 hover:bg-white/[0.05]"
           >
-            <div className="mb-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 to-[#7B4FB5]/20">
-                  <Search className="h-7 w-7 text-[#B39DDB]" />
+            <div className="relative aspect-[21/9] overflow-hidden">
+              <Image
+                src="/images/seo-analytics.jpg"
+                alt="SEO analytics dashboard"
+                fill
+                className="object-cover object-center transition-transform duration-700 group-hover/service:scale-105"
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
+            </div>
+            <div className="p-8 md:p-10">
+              <div className="mb-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 to-[#7B4FB5]/20">
+                    <Search className="h-7 w-7 text-[#B39DDB]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">
+                      SEO Optimalisatie
+                    </h3>
+                    <p className="text-sm text-[#B39DDB]/70">
+                      Hoger ranken in Google en meer organisch verkeer
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">
-                    SEO Optimalisatie
-                  </h3>
-                  <p className="text-sm text-[#B39DDB]/70">
-                    Hoger ranken in Google en meer organisch verkeer
-                  </p>
+                <div className="text-right">
+                  <div className="text-3xl font-bold text-[#B39DDB]">#1-3</div>
+                  <div className="text-xs text-white/40">Google Rankings</div>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-3xl font-bold text-[#B39DDB]">#1-3</div>
-                <div className="text-xs text-white/40">Google Rankings</div>
+
+              <p className="mb-6 text-white/60 leading-relaxed">
+                Ik combineer technische SEO, on-page optimalisatie en local SEO
+                tot een strategie die meetbaar resultaat oplevert. Van Core Web
+                Vitals en structured data tot keyword research en Google
+                Bedrijfsprofiel — meer zichtbaarheid, meer bezoekers en meer
+                klanten zonder advertentiekosten.
+              </p>
+
+              <div className="mb-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Uitgebreide technische SEO-audit",
+                  "On-page & content optimalisatie",
+                  "Structured data (Schema.org)",
+                  "Local SEO & Google Bedrijfsprofiel",
+                  "Core Web Vitals optimalisatie",
+                  "Keyword research & concurrentieanalyse",
+                ].map((feature) => (
+                  <div key={feature} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B39DDB]" />
+                    <span className="text-sm text-white/70">{feature}</span>
+                  </div>
+                ))}
               </div>
-            </div>
 
-            <p className="mb-6 text-white/60 leading-relaxed">
-              Ik combineer technische SEO, on-page optimalisatie en local SEO
-              tot een strategie die meetbaar resultaat oplevert. Van Core Web
-              Vitals en structured data tot keyword research en Google
-              Bedrijfsprofiel — meer zichtbaarheid, meer bezoekers en meer
-              klanten zonder advertentiekosten.
-            </p>
+              <div className="mb-6 flex flex-wrap gap-2">
+                {[
+                  "Google Search Console",
+                  "Google Analytics",
+                  "Ahrefs",
+                  "Schema.org",
+                  "XML Sitemap",
+                  "Core Web Vitals",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
-            <div className="mb-6 grid gap-3 sm:grid-cols-2">
-              {[
-                "Uitgebreide technische SEO-audit",
-                "On-page & content optimalisatie",
-                "Structured data (Schema.org)",
-                "Local SEO & Google Bedrijfsprofiel",
-                "Core Web Vitals optimalisatie",
-                "Keyword research & concurrentieanalyse",
-              ].map((feature) => (
-                <div key={feature} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B39DDB]" />
-                  <span className="text-sm text-white/70">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mb-6 flex flex-wrap gap-2">
-              {[
-                "Google Search Console",
-                "Google Analytics",
-                "Ahrefs",
-                "Schema.org",
-                "XML Sitemap",
-                "Core Web Vitals",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60"
+              <Link href="/diensten/seo-optimalisatie">
+                <Button
+                  size="sm"
+                  className="group rounded-full bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white"
                 >
-                  {tech}
-                </span>
-              ))}
+                  Meer over SEO
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </div>
-
-            <Link href="/diensten/seo-optimalisatie">
-              <Button
-                size="sm"
-                className="group rounded-full bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white"
-              >
-                Meer over SEO
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
           </motion.div>
 
           {/* ── Service 3: E-commerce / Webshop ── */}
@@ -547,79 +578,91 @@ export function DienstenContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition-colors duration-300 hover:border-[#7B4FB5]/30 hover:bg-white/[0.05] md:p-10"
+            className="group/service mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:border-[#7B4FB5]/30 hover:bg-white/[0.05]"
           >
-            <div className="mb-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 to-[#7B4FB5]/20">
-                  <ShoppingCart className="h-7 w-7 text-[#B39DDB]" />
+            <div className="relative aspect-[21/9] overflow-hidden">
+              <Image
+                src="/images/ecommerce.jpg"
+                alt="E-commerce webshop"
+                fill
+                className="object-cover object-center transition-transform duration-700 group-hover/service:scale-105"
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
+            </div>
+            <div className="p-8 md:p-10">
+              <div className="mb-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 to-[#7B4FB5]/20">
+                    <ShoppingCart className="h-7 w-7 text-[#B39DDB]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">
+                      Webshop Laten Maken
+                    </h3>
+                    <p className="text-sm text-[#B39DDB]/70">
+                      E-commerce oplossingen die converteren en schalen
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">
-                    Webshop Laten Maken
-                  </h3>
-                  <p className="text-sm text-[#B39DDB]/70">
-                    E-commerce oplossingen die converteren en schalen
-                  </p>
+                <div className="text-right">
+                  <div className="text-3xl font-bold text-[#B39DDB]">+45%</div>
+                  <div className="text-xs text-white/40">Conversie Rate</div>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-3xl font-bold text-[#B39DDB]">+45%</div>
-                <div className="text-xs text-white/40">Conversie Rate</div>
+
+              <p className="mb-6 text-white/60 leading-relaxed">
+                Online winkels die converteren, gebouwd op Shopify, WooCommerce
+                of custom Next.js. Met iDEAL, Klarna en geoptimaliseerde
+                checkout-flows haal je het maximale uit elke bezoeker.
+                Voorraadbeheer, verzendopties en conversie-optimalisatie
+                inbegrepen.
+              </p>
+
+              <div className="mb-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Shopify & WooCommerce development",
+                  "Custom webshop oplossingen in Next.js",
+                  "iDEAL, Mollie & Stripe integraties",
+                  "Voorraadbeheer & verzendopties",
+                  "Checkout & conversie optimalisatie",
+                  "Product SEO & Google Shopping",
+                ].map((feature) => (
+                  <div key={feature} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B39DDB]" />
+                    <span className="text-sm text-white/70">{feature}</span>
+                  </div>
+                ))}
               </div>
-            </div>
 
-            <p className="mb-6 text-white/60 leading-relaxed">
-              Online winkels die converteren, gebouwd op Shopify, WooCommerce of
-              custom Next.js. Met iDEAL, Klarna en geoptimaliseerde
-              checkout-flows haal je het maximale uit elke bezoeker.
-              Voorraadbeheer, verzendopties en conversie-optimalisatie
-              inbegrepen.
-            </p>
+              <div className="mb-6 flex flex-wrap gap-2">
+                {[
+                  "Shopify",
+                  "WooCommerce",
+                  "Mollie",
+                  "Stripe",
+                  "Next.js Commerce",
+                  "Google Shopping",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
-            <div className="mb-6 grid gap-3 sm:grid-cols-2">
-              {[
-                "Shopify & WooCommerce development",
-                "Custom webshop oplossingen in Next.js",
-                "iDEAL, Mollie & Stripe integraties",
-                "Voorraadbeheer & verzendopties",
-                "Checkout & conversie optimalisatie",
-                "Product SEO & Google Shopping",
-              ].map((feature) => (
-                <div key={feature} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B39DDB]" />
-                  <span className="text-sm text-white/70">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mb-6 flex flex-wrap gap-2">
-              {[
-                "Shopify",
-                "WooCommerce",
-                "Mollie",
-                "Stripe",
-                "Next.js Commerce",
-                "Google Shopping",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60"
+              <Link href="/diensten/webshop-laten-maken">
+                <Button
+                  size="sm"
+                  className="group rounded-full bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white"
                 >
-                  {tech}
-                </span>
-              ))}
+                  Meer over webshops
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </div>
-
-            <Link href="/diensten/webshop-laten-maken">
-              <Button
-                size="sm"
-                className="group rounded-full bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white"
-              >
-                Meer over webshops
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
           </motion.div>
 
           {/* ── Service 4: Maatwerk Software ── */}
@@ -628,79 +671,92 @@ export function DienstenContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition-colors duration-300 hover:border-[#7B4FB5]/30 hover:bg-white/[0.05] md:p-10"
+            className="group/service mb-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:border-[#7B4FB5]/30 hover:bg-white/[0.05]"
           >
-            <div className="mb-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 to-[#7B4FB5]/20">
-                  <Layers className="h-7 w-7 text-[#B39DDB]" />
+            <div className="relative aspect-[21/9] overflow-hidden">
+              <Image
+                src="/images/maatwerk-software.jpg"
+                alt="Maatwerk software dashboard"
+                fill
+                className="object-cover object-center transition-transform duration-700 group-hover/service:scale-105"
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
+            </div>
+            <div className="p-8 md:p-10">
+              <div className="mb-6 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 to-[#7B4FB5]/20">
+                    <Layers className="h-7 w-7 text-[#B39DDB]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">
+                      Maatwerk Software
+                    </h3>
+                    <p className="text-sm text-[#B39DDB]/70">
+                      Custom webapplicaties die je bedrijfsprocessen
+                      stroomlijnen
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">
-                    Maatwerk Software
-                  </h3>
-                  <p className="text-sm text-[#B39DDB]/70">
-                    Custom webapplicaties die je bedrijfsprocessen stroomlijnen
-                  </p>
+                <div className="text-right">
+                  <div className="text-3xl font-bold text-[#B39DDB]">24/7</div>
+                  <div className="text-xs text-white/40">Beschikbaarheid</div>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-3xl font-bold text-[#B39DDB]">24/7</div>
-                <div className="text-xs text-white/40">Beschikbaarheid</div>
+
+              <p className="mb-6 text-white/60 leading-relaxed">
+                Van dashboards en klantportalen tot API-koppelingen en
+                geautomatiseerde workflows. Gebouwd met Next.js, Node.js en
+                PostgreSQL, naadloos geïntegreerd met je bestaande systemen.
+                Schaalbaar, onderhoudbaar en opgeleverd met documentatie.
+              </p>
+
+              <div className="mb-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Custom webapplicaties & portalen",
+                  "Dashboards & data-visualisatie",
+                  "RESTful API development",
+                  "Database ontwerp & optimalisatie",
+                  "Third-party integraties (CRM, ERP)",
+                  "Cloud deployment & DevOps",
+                ].map((feature) => (
+                  <div key={feature} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B39DDB]" />
+                    <span className="text-sm text-white/70">{feature}</span>
+                  </div>
+                ))}
               </div>
-            </div>
 
-            <p className="mb-6 text-white/60 leading-relaxed">
-              Van dashboards en klantportalen tot API-koppelingen en
-              geautomatiseerde workflows. Gebouwd met Next.js, Node.js en
-              PostgreSQL, naadloos geïntegreerd met je bestaande systemen.
-              Schaalbaar, onderhoudbaar en opgeleverd met documentatie.
-            </p>
+              <div className="mb-6 flex flex-wrap gap-2">
+                {[
+                  "Next.js",
+                  "PostgreSQL",
+                  "MongoDB",
+                  "Redis",
+                  "AWS",
+                  "Vercel",
+                  "Docker",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
-            <div className="mb-6 grid gap-3 sm:grid-cols-2">
-              {[
-                "Custom webapplicaties & portalen",
-                "Dashboards & data-visualisatie",
-                "RESTful API development",
-                "Database ontwerp & optimalisatie",
-                "Third-party integraties (CRM, ERP)",
-                "Cloud deployment & DevOps",
-              ].map((feature) => (
-                <div key={feature} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B39DDB]" />
-                  <span className="text-sm text-white/70">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mb-6 flex flex-wrap gap-2">
-              {[
-                "Next.js",
-                "PostgreSQL",
-                "MongoDB",
-                "Redis",
-                "AWS",
-                "Vercel",
-                "Docker",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60"
+              <Link href="/diensten/maatwerk-software">
+                <Button
+                  size="sm"
+                  className="group rounded-full bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white"
                 >
-                  {tech}
-                </span>
-              ))}
+                  Meer over maatwerk
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </div>
-
-            <Link href="/diensten/maatwerk-software">
-              <Button
-                size="sm"
-                className="group rounded-full bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white"
-              >
-                Meer over maatwerk
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
           </motion.div>
         </div>
       </section>

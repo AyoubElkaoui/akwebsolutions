@@ -6,6 +6,7 @@ import { Timeline } from "@/components/ui/timeline";
 import { WobbleCard } from "@/components/ui/wobble-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Heart,
@@ -309,40 +310,55 @@ export function OverOnsContent() {
               </div>
             </motion.div>
 
-            {/* Stats card */}
+            {/* Stats card with workspace image */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#3D2975]/40 via-black to-[#7B4FB5]/20 p-10"
+              className="relative overflow-hidden rounded-3xl border border-white/10"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(123,79,181,0.15),transparent_60%)]" />
-              <div className="relative grid grid-cols-2 gap-8">
-                {[
-                  { value: "5+", label: "Jaar ervaring" },
-                  { value: "50+", label: "Projecten afgerond" },
-                  { value: "100%", label: "Tevreden klanten" },
-                  { value: "ZZP", label: "Persoonlijke aanpak" },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="mb-2 text-4xl font-bold text-[#B39DDB]">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-white/50">{stat.label}</div>
-                  </div>
-                ))}
+              {/* Workspace image */}
+              <div className="relative h-56 overflow-hidden">
+                <Image
+                  src="/images/workspace.jpg"
+                  alt="Moderne werkplek"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
               </div>
 
-              <div className="relative mt-10 rounded-2xl border border-white/10 bg-white/5 p-6">
-                <p className="text-center text-sm italic leading-relaxed text-white/70">
-                  &ldquo;Ik geloof dat technologie toegankelijk moet zijn voor
-                  iedereen. Mijn doel is om kwalitatief hoogwaardige digitale
-                  oplossingen te leveren die echt impact maken.&rdquo;
-                </p>
-                <p className="mt-3 text-center text-sm font-semibold text-[#B39DDB]">
-                  — Ayoub K., Oprichter
-                </p>
+              {/* Stats overlay */}
+              <div className="bg-gradient-to-br from-[#3D2975]/40 via-black to-[#7B4FB5]/20 p-10">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(123,79,181,0.15),transparent_60%)]" />
+                <div className="relative grid grid-cols-2 gap-8">
+                  {[
+                    { value: "5+", label: "Jaar ervaring" },
+                    { value: "50+", label: "Projecten afgerond" },
+                    { value: "100%", label: "Tevreden klanten" },
+                    { value: "ZZP", label: "Persoonlijke aanpak" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="text-center">
+                      <div className="mb-2 text-4xl font-bold text-[#B39DDB]">
+                        {stat.value}
+                      </div>
+                      <div className="text-sm text-white/50">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="relative mt-10 rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <p className="text-center text-sm italic leading-relaxed text-white/70">
+                    &ldquo;Ik geloof dat technologie toegankelijk moet zijn voor
+                    iedereen. Mijn doel is om kwalitatief hoogwaardige digitale
+                    oplossingen te leveren die echt impact maken.&rdquo;
+                  </p>
+                  <p className="mt-3 text-center text-sm font-semibold text-[#B39DDB]">
+                    — Ayoub K., Oprichter
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>

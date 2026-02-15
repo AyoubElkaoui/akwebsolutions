@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 function createAvatarDataUri(initials: string, bgColor: string): string {
@@ -26,6 +27,7 @@ function createAvatarDataUri(initials: string, bgColor: string): string {
 
 const projects = [
   {
+    slug: "ad-loodgietersbedrijf",
     title: "AD Loodgietersbedrijf",
     url: "adloodgietersbedrijf.nl",
     type: "Bedrijfswebsite",
@@ -35,6 +37,8 @@ const projects = [
       "Website voor loodgietersbedrijf met 10+ jaar ervaring in Amsterdam. 24/7 spoedservice, lekkage detectie, installaties en renovatie. Snelle, SEO-geoptimaliseerde website met contactformulier en diensten overzicht.",
     gradient: "from-[#7B4FB5] to-[#B39DDB]",
     icon: Globe,
+    screenshot: "/adloodgieter/new.png",
+    oldScreenshot: "/adloodgieter/old.png",
     highlights: [
       "SEO-geoptimaliseerd voor lokale vindbaarheid",
       "Contactformulier met directe notificaties",
@@ -43,6 +47,7 @@ const projects = [
     ],
   },
   {
+    slug: "pro-banden-service",
     title: "Pro Banden Service",
     url: "probandenservice.nl",
     type: "Bedrijfswebsite",
@@ -52,6 +57,7 @@ const projects = [
       "Website voor bandengarage met overzicht van diensten en vestigingen. Snelle bandenwissel, spoedservice, 7 dagen per week geopend.",
     gradient: "from-blue-500 to-cyan-500",
     icon: Globe,
+    screenshot: "/probanden/new.png",
     highlights: [
       "Overzicht van alle diensten en vestigingen",
       "Online afspraken maken",
@@ -60,6 +66,7 @@ const projects = [
     ],
   },
   {
+    slug: "loens-collection",
     title: "Loens Collection",
     url: "loenscollection.com",
     type: "E-commerce Webshop",
@@ -69,6 +76,7 @@ const projects = [
       "Elegante modest fashion webshop voor dameskleding. Complete Shopify implementatie met Klarna betaalintegratie, multi-language support en productcatalogus voor jurken, tops, broeken en sets.",
     gradient: "from-pink-500 to-rose-500",
     icon: Layers,
+    screenshot: "/loens/new.png",
     highlights: [
       "Klarna betaalintegratie",
       "Multi-language support (NL/EN)",
@@ -77,6 +85,7 @@ const projects = [
     ],
   },
   {
+    slug: "mkh-bouw",
     title: "MKH Bouw",
     url: "mkhbouw.nl",
     type: "Bedrijfswebsite",
@@ -86,6 +95,7 @@ const projects = [
       "Moderne website voor klussenbedrijf uit Amsterdam. Renovaties, badkamers, keukens, tegelwerk en schilderwerk voor particulieren en bedrijven. Portfolio showcase en offerte aanvraag functionaliteit.",
     gradient: "from-orange-500 to-amber-500",
     icon: Globe,
+    screenshot: "/mkhbouw/new.png",
     highlights: [
       "Portfolio met projectfoto's",
       "Offerte aanvraag formulier",
@@ -94,6 +104,7 @@ const projects = [
     ],
   },
   {
+    slug: "clockd",
     title: "Clockd",
     url: "clockd.nl",
     type: "Maatwerk Software",
@@ -103,6 +114,7 @@ const projects = [
       "Op maat gebouwd urenregistratie systeem voor bedrijven. Medewerkers kunnen uren registreren, projecten beheren en rapportages genereren. Dashboard met real-time inzichten en exports.",
     gradient: "from-emerald-500 to-green-500",
     icon: Code2,
+    screenshot: "/clockd/user_anonymized.png",
     highlights: [
       "Real-time dashboard met inzichten",
       "Urenregistratie per project en medewerker",
@@ -219,34 +231,46 @@ export function PortfolioContent() {
                   {/* Visual Side */}
                   <div className={`${isEven ? "lg:order-2" : "lg:order-1"}`}>
                     <div
-                      className={`relative rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden aspect-[4/3] flex flex-col items-center justify-center p-8`}
+                      className={`group/card relative rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden aspect-[4/3]`}
                     >
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-[0.08]`}
                       />
-                      <div
-                        className={`relative z-10 w-20 h-20 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center mb-6`}
-                      >
-                        <IconComponent className="w-10 h-10 text-white" />
-                      </div>
-                      <h3 className="relative z-10 text-2xl font-bold text-white mb-2 text-center">
-                        {project.title}
-                      </h3>
-                      {project.url && (
-                        <p className="relative z-10 text-gray-400 text-sm">
-                          {project.url}
-                        </p>
-                      )}
-                      <div className="relative z-10 mt-4 flex flex-wrap gap-2 justify-center">
-                        {project.stack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 rounded-full bg-white/10 text-xs text-gray-300"
+                      {project.screenshot ? (
+                        <>
+                          <Image
+                            src={project.screenshot}
+                            alt={`${project.title} website screenshot`}
+                            fill
+                            className="object-cover object-top transition-transform duration-700 group-hover/card:scale-105"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+                          <div className="absolute bottom-4 left-4 right-4 z-10">
+                            <div className="flex flex-wrap gap-2">
+                              {project.stack.map((tech) => (
+                                <span
+                                  key={tech}
+                                  className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-xs text-gray-200 border border-white/10"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="flex flex-col items-center justify-center h-full p-8">
+                          <div
+                            className={`relative z-10 w-20 h-20 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center mb-6`}
                           >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                            <IconComponent className="w-10 h-10 text-white" />
+                          </div>
+                          <h3 className="relative z-10 text-2xl font-bold text-white mb-2 text-center">
+                            {project.title}
+                          </h3>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -283,17 +307,26 @@ export function PortfolioContent() {
                       ))}
                     </ul>
 
-                    {project.url && (
-                      <a
-                        href={`https://${project.url}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-[#B39DDB] hover:text-white transition-colors font-medium"
+                    <div className="flex flex-wrap items-center gap-6">
+                      <Link
+                        href={`/portfolio/${project.slug}`}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7B4FB5] to-[#B39DDB] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
                       >
-                        Bekijk live website
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
+                        Bekijk case study
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                      {project.url && (
+                        <a
+                          href={`https://${project.url}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-[#B39DDB] hover:text-white transition-colors text-sm font-medium"
+                        >
+                          Bekijk live website
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               );

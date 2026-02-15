@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRef } from "react";
 
 const projects = [
@@ -16,6 +17,7 @@ const projects = [
     stack: ["Next.js", "React", "Tailwind CSS"],
     gradient: "from-[#7B4FB5] via-[#9b6dcd] to-[#B39DDB]",
     accent: "#7B4FB5",
+    screenshot: "/adloodgieter/new.png",
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ const projects = [
     stack: ["Shopify", "Klarna", "Dawn Theme"],
     gradient: "from-pink-500 via-rose-400 to-pink-300",
     accent: "#ec4899",
+    screenshot: "/loens/new.png",
   },
   {
     id: 3,
@@ -37,6 +40,7 @@ const projects = [
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     gradient: "from-orange-500 via-amber-400 to-orange-300",
     accent: "#f97316",
+    screenshot: "/mkhbouw/new.png",
   },
   {
     id: 4,
@@ -48,6 +52,7 @@ const projects = [
     stack: ["Next.js", "PostgreSQL", "TypeScript"],
     gradient: "from-emerald-500 via-green-400 to-emerald-300",
     accent: "#10b981",
+    screenshot: "/clockd/user_anonymized.png",
   },
 ];
 
@@ -81,17 +86,30 @@ function ProjectCard({
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="group relative h-[320px] w-full cursor-pointer overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.02] md:h-[420px]"
       >
-        {/* Animated gradient background */}
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 transition-opacity duration-700 group-hover:opacity-[0.12]`}
-        />
+        {/* Screenshot background */}
+        {project.screenshot && (
+          <>
+            <Image
+              src={project.screenshot}
+              alt={`${project.title} screenshot`}
+              fill
+              className="object-cover object-top transition-all duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30 transition-opacity duration-500 group-hover:from-black group-hover:via-black/60 group-hover:to-black/20" />
+          </>
+        )}
 
-        {/* Dot pattern overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.05)_1px,transparent_0)] bg-[size:24px_24px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        {/* Animated gradient background (fallback) */}
+        {!project.screenshot && (
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-[0.08]`}
+          />
+        )}
 
         {/* Top accent line */}
         <motion.div
-          className={`absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r ${project.gradient}`}
+          className={`absolute left-0 right-0 top-0 z-10 h-[2px] bg-gradient-to-r ${project.gradient}`}
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
@@ -104,14 +122,14 @@ function ProjectCard({
         />
 
         {/* Content */}
-        <div className="relative flex h-full flex-col justify-between p-8">
+        <div className="relative z-10 flex h-full flex-col justify-between p-8">
           {/* Top */}
           <div>
             <div className="mb-6 flex items-center justify-between">
               <span
-                className="rounded-full px-3 py-1 text-xs font-semibold"
+                className="rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-sm"
                 style={{
-                  backgroundColor: `${project.accent}20`,
+                  backgroundColor: `${project.accent}30`,
                   color: project.accent,
                 }}
               >
@@ -121,7 +139,7 @@ function ProjectCard({
                 {project.stack.slice(0, 2).map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-medium text-white/40"
+                    className="rounded-full border border-white/10 bg-black/40 backdrop-blur-sm px-2.5 py-0.5 text-[10px] font-medium text-white/60"
                   >
                     {tech}
                   </span>
@@ -129,11 +147,11 @@ function ProjectCard({
               </div>
             </div>
 
-            <h3 className="mb-3 text-2xl font-bold text-white transition-colors group-hover:text-white lg:text-3xl">
+            <h3 className="mb-3 text-2xl font-bold text-white drop-shadow-lg lg:text-3xl">
               {project.title}
             </h3>
 
-            <p className="max-w-sm text-sm leading-relaxed text-white/50 transition-colors group-hover:text-white/70">
+            <p className="max-w-sm text-sm leading-relaxed text-white/70 drop-shadow-md">
               {project.description}
             </p>
           </div>
@@ -141,27 +159,22 @@ function ProjectCard({
           {/* Bottom */}
           <div className="flex items-end justify-between">
             {project.url ? (
-              <div className="flex items-center gap-2 text-sm text-white/30 transition-colors group-hover:text-white/60">
+              <div className="flex items-center gap-2 text-sm text-white/50 transition-colors group-hover:text-white/80">
                 <ExternalLink className="h-3.5 w-3.5" />
                 <span>{project.url}</span>
               </div>
             ) : (
-              <span className="text-sm text-white/30">Intern project</span>
+              <span className="text-sm text-white/50">Intern project</span>
             )}
 
             <motion.div
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all group-hover:border-white/20 group-hover:bg-white/10"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-black/40 backdrop-blur-sm transition-all group-hover:border-white/30 group-hover:bg-black/60"
               whileHover={{ scale: 1.1, rotate: 45 }}
               transition={{ duration: 0.3 }}
             >
-              <ArrowUpRight className="h-5 w-5 text-white/60 transition-colors group-hover:text-white" />
+              <ArrowUpRight className="h-5 w-5 text-white/80 transition-colors group-hover:text-white" />
             </motion.div>
           </div>
-        </div>
-
-        {/* Large number watermark */}
-        <div className="pointer-events-none absolute -bottom-8 -right-4 select-none text-[100px] font-black leading-none text-white/[0.02] transition-all duration-700 group-hover:text-white/[0.04] md:text-[180px]">
-          {String(index + 1).padStart(2, "0")}
         </div>
       </motion.div>
     </motion.div>
