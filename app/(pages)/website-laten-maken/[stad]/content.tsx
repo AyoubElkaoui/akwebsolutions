@@ -367,6 +367,130 @@ export function LocationContent({
         </div>
       </section>
 
+      {/* ── Waarom een Professionele Website ── */}
+      <section className="relative py-24">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-purple-600/[0.02] to-transparent" />
+        <div className="relative mx-auto max-w-4xl px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-white sm:text-4xl text-center">
+              Waarom een Professionele Website in{" "}
+              <span className="text-purple-400">{location.stad}</span>?
+            </h2>
+            <div className="mt-8 space-y-5 text-gray-400 leading-relaxed text-lg">
+              <p>
+                De concurrentie in {location.stad} en omgeving groeit. Steeds
+                meer consumenten zoeken online naar lokale diensten en producten.
+                Uit onderzoek blijkt dat meer dan 80% van de potentiële klanten
+                eerst Google raadpleegt voordat ze een aankoop doen of contact
+                opnemen met een bedrijf. Zonder een professionele website loop je
+                als ondernemer in {location.stad} dagelijks klanten mis.
+              </p>
+              <p>
+                Een goede website is meer dan alleen een online visitekaartje.
+                Het is een verkoopkanaal dat 24 uur per dag, 7 dagen per week
+                voor jou werkt. Potentiële klanten in {location.stad} en de
+                regio {location.regio} kunnen jouw diensten ontdekken, reviews
+                lezen, offertes aanvragen en direct contact opnemen — zelfs
+                buiten kantooruren.
+              </p>
+              <p>
+                Bij AK Web Solutions bouwen we websites die niet alleen mooi
+                zijn, maar ook daadwerkelijk resultaat opleveren. Onze websites
+                laden razendsnel (onder de 1 seconde), scoren 90+ op Google
+                PageSpeed en zijn volledig geoptimaliseerd voor zoekmachines.
+                Dat betekent dat jouw bedrijf in {location.stad} bovenaan in
+                Google verschijnt wanneer potentiële klanten zoeken naar jouw
+                diensten.
+              </p>
+              <p>
+                We gebruiken Next.js in plaats van WordPress. Waarom? Omdat
+                Next.js websites tot 5 keer sneller laden, geen last hebben van
+                kwetsbare plugins, en standaard beter scoren in Google. Elke
+                website die we bouwen is maatwerk — geen standaard templates,
+                maar een uniek ontwerp dat past bij jouw merk en jouw doelgroep
+                in {location.stad}.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Wat Wij Bieden ── */}
+      <section className="relative py-24">
+        <div className="mx-auto max-w-4xl px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-white sm:text-4xl text-center">
+              Wat Wij Bieden voor Bedrijven in {location.stad}
+            </h2>
+            <div className="mt-8 space-y-5 text-gray-400 leading-relaxed text-lg">
+              <p>
+                Als freelance webdeveloper gevestigd in Baarn werk ik nauw samen
+                met ondernemers in {location.stad} en de hele regio{" "}
+                {location.regio}. Doordat je direct contact hebt met de
+                ontwikkelaar — zonder tussenlagen of accountmanagers — zijn de
+                lijnen kort en de communicatie helder. Je weet altijd precies
+                waar je aan toe bent.
+              </p>
+              <p>
+                Elke website begint met een gratis en vrijblijvend
+                adviesgesprek. Daarin bespreken we jouw doelen, doelgroep en
+                budget. Op basis daarvan stel ik een plan op dat precies past
+                bij wat jij nodig hebt. Of het nu gaat om een{" "}
+                <Link
+                  href="/diensten/website-laten-maken"
+                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4"
+                >
+                  bedrijfswebsite
+                </Link>
+                , een{" "}
+                <Link
+                  href="/diensten/webshop-laten-maken"
+                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4"
+                >
+                  webshop
+                </Link>{" "}
+                of een{" "}
+                <Link
+                  href="/diensten/maatwerk-software"
+                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4"
+                >
+                  maatwerk applicatie
+                </Link>{" "}
+                — wij leveren kwaliteit.
+              </p>
+              <p>
+                Na oplevering laten we je niet in de steek. We bieden
+                doorlopende support en{" "}
+                <Link
+                  href="/diensten/website-onderhoud"
+                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4"
+                >
+                  website onderhoud
+                </Link>{" "}
+                zodat jouw website altijd up-to-date, veilig en snel blijft. En
+                met onze{" "}
+                <Link
+                  href="/diensten/seo-optimalisatie"
+                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4"
+                >
+                  SEO optimalisatie
+                </Link>{" "}
+                diensten zorgen we ervoor dat je ook op de lange termijn goed
+                vindbaar blijft in {location.stad} en omgeving.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Services Section ── */}
       <section className="relative py-24">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-purple-600/[0.03] to-transparent" />
@@ -587,6 +711,58 @@ export function LocationContent({
           </div>
         </section>
       )}
+
+      {/* ── Resultaten / Portfolio Sectie ── */}
+      <section className="relative py-24">
+        <div className="mx-auto max-w-4xl px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-white sm:text-4xl text-center">
+              Bewezen Resultaten voor Ondernemers
+            </h2>
+            <div className="mt-8 space-y-5 text-gray-400 leading-relaxed text-lg">
+              <p>
+                We hebben al diverse projecten succesvol opgeleverd voor
+                bedrijven in de regio. Van loodgieters tot modewinkels — elke
+                ondernemer verdient een website die werkt. Bekijk onze{" "}
+                <Link
+                  href="/portfolio"
+                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4"
+                >
+                  portfolio
+                </Link>{" "}
+                om te zien wat we voor jou kunnen betekenen.
+              </p>
+              <p>
+                Elke website die we opleveren wordt getest op snelheid,
+                veiligheid en SEO-prestaties. We streven naar 90+ scores op
+                Google PageSpeed Insights en zorgen voor een solide technische
+                basis waarmee jij gevonden wordt door klanten in {location.stad}{" "}
+                en omgeving.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-6 py-3 text-purple-300 hover:bg-purple-500/20 transition-colors"
+              >
+                Bekijk Portfolio
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-gray-300 hover:bg-white/[0.06] transition-colors"
+              >
+                Neem Contact Op
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* ── CTA Section ── */}
       <section className="relative py-24">

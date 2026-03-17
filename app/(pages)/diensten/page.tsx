@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { DienstenContent } from "@/components/sections/diensten-content";
 
 export const metadata: Metadata = {
-  title: "Diensten - Website Laten Maken, SEO & Webshop | AK Web Solutions",
+  title: "Diensten | Website, Webshop, SEO & Maatwerk | AK Web Solutions",
   description:
-    "Professionele web development diensten in Baarn: websites laten maken, SEO optimalisatie, webshop ontwikkeling en maatwerk software. Snelle oplevering, persoonlijke aanpak. Vraag een gratis adviesgesprek aan.",
+    "Website laten maken, webshop bouwen, SEO optimalisatie en maatwerk software. Freelance webdeveloper in Baarn voor MKB-bedrijven in de regio.",
   keywords: [
     "website laten maken",
     "webdesign diensten",
@@ -16,14 +16,15 @@ export const metadata: Metadata = {
     "web development Baarn",
     "freelance webdesigner",
     "Next.js developer",
+    "webdeveloper Baarn",
   ],
   alternates: {
     canonical: "https://akwebsolutions.nl/diensten",
   },
   openGraph: {
-    title: "Diensten - Website, SEO, Webshop & Software | AK Web Solutions",
+    title: "Diensten | Website, Webshop, SEO & Maatwerk | AK Web Solutions",
     description:
-      "Van websites en webshops tot SEO en maatwerk software. Bekijk mijn diensten en ontdek hoe ik jouw bedrijf online laat groeien.",
+      "Website laten maken, webshop bouwen, SEO optimalisatie en maatwerk software. Freelance webdeveloper in Baarn voor MKB-bedrijven.",
     url: "https://akwebsolutions.nl/diensten",
   },
 };

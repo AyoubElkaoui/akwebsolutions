@@ -27,8 +27,8 @@ export async function generateMetadata({
   const { location } = data;
 
   return {
-    title: `SEO Optimalisatie in ${location.stad} | AK Web Solutions`,
-    description: `Professionele SEO optimalisatie in ${location.stad}? AK Web Solutions helpt bedrijven in ${location.stad} hoger scoren in Google met technische SEO, lokale optimalisatie en content strategie. Vraag een gratis SEO-audit aan.`,
+    title: `SEO Optimalisatie ${location.stad} | Hoger in Google | AK Web Solutions`,
+    description: `Professionele SEO optimalisatie in ${location.stad}. Hoger scoren in Google met technische SEO, lokale optimalisatie en content strategie. Gratis SEO-audit aanvragen!`,
     keywords: [
       `seo optimalisatie ${location.stad.toLowerCase()}`,
       `seo specialist ${location.stad.toLowerCase()}`,
@@ -102,6 +102,19 @@ export default async function SeoLocationPage({ params }: PageProps) {
     ],
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: content.faq.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -145,6 +158,12 @@ export default async function SeoLocationPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
       <Navigation />

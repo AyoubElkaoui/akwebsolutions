@@ -9,42 +9,45 @@ import { CTASection } from "@/components/sections/cta-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AK Web Solutions - Professionele Websites & Web Development | Baarn",
+  title:
+    "Website Laten Maken Baarn | Webdesign & SEO | AK Web Solutions",
   description:
-    "Professionele websites, webshops en maatwerk software door freelance web developer in Baarn. Snelle, SEO-geoptimaliseerde websites met Next.js en React. Van strategie tot live website in 2-4 weken.",
+    "Professionele websites en webshops laten maken in Baarn. Freelance webdesigner voor MKB. Snelle Next.js websites, SEO en online marketing. Gratis adviesgesprek.",
   keywords: [
     "website laten maken",
-    "web development",
-    "webdesign Baarn",
+    "website laten maken baarn",
+    "webdesign baarn",
+    "webdesigner baarn",
     "professionele website",
     "SEO optimalisatie",
     "webshop laten maken",
     "Next.js developer",
     "freelance webdeveloper",
     "maatwerk software",
+    "web development",
   ],
   alternates: {
     canonical: "https://akwebsolutions.nl",
   },
   openGraph: {
-    title: "AK Web Solutions - Professionele Websites & Web Development",
+    title: "Website Laten Maken Baarn | Webdesign & SEO | AK Web Solutions",
     description:
-      "Snelle, SEO-geoptimaliseerde websites en custom web development. Van strategie tot live website in 2-4 weken. Gevestigd in Baarn.",
+      "Professionele websites en webshops laten maken in Baarn. Freelance webdesigner voor MKB. Snelle Next.js websites, SEO en online marketing.",
     url: "https://akwebsolutions.nl",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "AK Web Solutions - Professionele Web Development",
+        alt: "AK Web Solutions - Website Laten Maken Baarn",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AK Web Solutions - Professionele Websites & Web Development",
+    title: "Website Laten Maken Baarn | Webdesign & SEO | AK Web Solutions",
     description:
-      "Snelle, SEO-geoptimaliseerde websites en custom web development. Van strategie tot live website in 2-4 weken.",
+      "Professionele websites en webshops laten maken in Baarn. Freelance webdesigner voor MKB. Snelle Next.js websites, SEO en online marketing.",
   },
 };
 

@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://akwebsolutions.nl"),
   title: {
     default:
-      "AK Web Solutions - Professionele Websites & Web Development | Baarn",
+      "Website Laten Maken Baarn | Webdesign & SEO | AK Web Solutions",
     template: "%s | AK Web Solutions",
   },
   description:
-    "Snelle, SEO-geoptimaliseerde websites en custom web development oplossingen. Gespecialiseerd in Next.js, React en moderne webtechnologieën. Van strategie tot live website in 2-4 weken. Gevestigd in Baarn, Nederland.",
+    "Professionele websites en webshops laten maken in Baarn. Freelance webdesigner voor MKB. Snelle Next.js websites, SEO en online marketing. Gratis adviesgesprek.",
   keywords: [
     "web development",
     "website laten maken",

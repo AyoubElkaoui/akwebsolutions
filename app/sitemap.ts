@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.frontmatter.date),
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.6,
   }));
 
   const locationPages = locations.map((loc) => ({
@@ -107,7 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/portfolio`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/blog`,
@@ -132,7 +132,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/privacy`,

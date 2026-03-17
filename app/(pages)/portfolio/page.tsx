@@ -4,16 +4,16 @@ import type { Metadata } from "next";
 import { PortfolioContent } from "@/components/sections/portfolio-content";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Websites, Webshops & Apps die ik heb Gebouwd",
+  title: "Portfolio | Websites & Webshops | AK Web Solutions Baarn",
   description:
-    "Bekijk mijn portfolio: websites voor AD Loodgietersbedrijf en MKH Bouw, Shopify webshop voor Loens Collection, WordPress site voor Pro Banden Service en maatwerk software Clockd. Echte projecten, echte resultaten.",
+    "Bekijk recente projecten: websites, webshops en webapplicaties voor MKB-bedrijven. Van AD Loodgietersbedrijf tot Loens Collection.",
   alternates: {
     canonical: "https://akwebsolutions.nl/portfolio",
   },
   openGraph: {
-    title: "Portfolio - Websites, Webshops & Apps | AK Web Solutions",
+    title: "Portfolio | Websites & Webshops | AK Web Solutions Baarn",
     description:
-      "Van Next.js bedrijfswebsites tot Shopify webshops en maatwerk software. Bekijk de projecten die ik heb opgeleverd.",
+      "Bekijk recente projecten: websites, webshops en webapplicaties voor MKB-bedrijven. Echte projecten, echte resultaten.",
     url: "https://akwebsolutions.nl/portfolio",
   },
 };

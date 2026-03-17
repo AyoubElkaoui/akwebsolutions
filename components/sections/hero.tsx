@@ -195,8 +195,13 @@ function Counter({
   label: string;
   delay: number;
 }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
   useEffect(() => {
+    if (hasAnimated) return;
+    setHasAnimated(true);
+    setCount(0);
     const t = setTimeout(() => {
       let cur = 0;
       const inc = target / 50;
@@ -210,11 +215,14 @@ function Counter({
       return () => clearInterval(interval);
     }, delay);
     return () => clearTimeout(t);
-  }, [target, delay]);
+  }, [target, delay, hasAnimated]);
 
   return (
     <div className="text-center">
-      <div className="text-2xl font-black text-white sm:text-3xl md:text-5xl">
+      <div
+        className="text-2xl font-black text-white sm:text-3xl md:text-5xl"
+        aria-label={`${target}${suffix} ${label}`}
+      >
         {count}
         {suffix}
       </div>
