@@ -40,22 +40,17 @@ export function StructuredData() {
       "https://www.facebook.com/profile.php?id=61573229608493",
     ],
     areaServed: [
-      {
-        "@type": "Country",
-        name: "Netherlands",
-      },
-      {
-        "@type": "City",
-        name: "Baarn",
-      },
-      {
-        "@type": "City",
-        name: "Amsterdam",
-      },
-      {
-        "@type": "City",
-        name: "Utrecht",
-      },
+      { "@type": "Country", name: "Netherlands" },
+      { "@type": "City", name: "Baarn" },
+      { "@type": "City", name: "Amsterdam" },
+      { "@type": "City", name: "Utrecht" },
+      { "@type": "City", name: "Den Haag" },
+      { "@type": "City", name: "Rotterdam" },
+      { "@type": "City", name: "Eindhoven" },
+      { "@type": "City", name: "Haarlem" },
+      { "@type": "City", name: "Amersfoort" },
+      { "@type": "City", name: "Hilversum" },
+      { "@type": "City", name: "Almere" },
     ],
     knowsAbout: [
       "Web Development",
@@ -312,6 +307,57 @@ export function StructuredData() {
     ],
   };
 
+  const pricingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Professionele Website Laten Maken",
+    description:
+      "Professionele websites en webshops bouwen met Next.js. Transparante prijzen, snelle oplevering en SEO-geoptimaliseerd.",
+    brand: {
+      "@type": "Brand",
+      name: "AK Web Solutions",
+    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Starter Website",
+        price: "1499",
+        priceCurrency: "EUR",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock",
+        description:
+          "5-pagina professionele website met SEO-basis, contactformulier en responsive design. Oplevering in 2-3 weken.",
+        url: "https://akwebsolutions.nl/prijzen",
+        seller: {
+          "@type": "Organization",
+          name: "AK Web Solutions",
+        },
+      },
+      {
+        "@type": "Offer",
+        name: "Groei Website",
+        price: "2999",
+        priceCurrency: "EUR",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock",
+        description:
+          "Tot 10 pagina's maatwerk design met volledige SEO-optimalisatie, blog/CMS en geavanceerde animaties. Oplevering in 3-4 weken.",
+        url: "https://akwebsolutions.nl/prijzen",
+        seller: {
+          "@type": "Organization",
+          name: "AK Web Solutions",
+        },
+      },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: "5",
+    },
+  };
+
   const portfolioSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -405,6 +451,10 @@ export function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
       />
       <script
         type="application/ld+json"

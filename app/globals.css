@@ -176,6 +176,27 @@
   p {
     @apply m-0;
   }
+
+  /* Custom selection color */
+  ::selection {
+    background-color: rgba(123, 79, 181, 0.35);
+    color: #fff;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3D2975;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7B4FB5;
+  }
 }
 
 /* Custom utility classes */
@@ -214,6 +235,36 @@
 
   .glow-accent {
     box-shadow: 0 0 40px rgba(179, 157, 219, 0.3);
+  }
+
+  /* Noise texture overlay for depth */
+  .noise {
+    position: relative;
+  }
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* Gradient border utility */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(#000, #000) padding-box,
+      linear-gradient(to right, #7B4FB5, #B39DDB) border-box;
+    border: 1px solid transparent;
+  }
+
+  /* Smooth card hover */
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(123, 79, 181, 0.15);
   }
 }
 

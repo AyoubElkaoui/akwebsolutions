@@ -6,6 +6,9 @@ import { ProblemSolution } from "@/components/sections/problem-solution";
 import { ServicesShowcase } from "@/components/sections/services-showcase";
 import { PortfolioBento } from "@/components/sections/portfolio-bento";
 import { CTASection } from "@/components/sections/cta-section";
+import { BlogPreview } from "@/components/sections/blog-preview";
+import { Reviews } from "@/components/sections/reviews";
+import { getAllPosts } from "@/lib/blog";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -52,6 +55,18 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const latestPosts = getAllPosts()
+    .slice(0, 3)
+    .map((p) => ({
+      slug: p.slug,
+      title: p.frontmatter.title,
+      description: p.frontmatter.description,
+      date: p.frontmatter.date,
+      category: p.frontmatter.category,
+      image: p.frontmatter.image,
+      readingTime: p.readingTime,
+    }));
+
   return (
     <div className="min-h-screen bg-black">
       <Navigation />
@@ -61,6 +76,8 @@ export default function Home() {
         <ProblemSolution />
         <ServicesShowcase />
         <PortfolioBento />
+        <Reviews />
+        <BlogPreview posts={latestPosts} />
         <CTASection />
       </main>
       <Footer />

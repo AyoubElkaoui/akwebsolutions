@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight, Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, Sparkles, Star } from "lucide-react";
 import Link from "next/link";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
@@ -38,12 +38,35 @@ export function CTASection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#7B4FB5]/30 bg-[#7B4FB5]/10 px-4 py-2"
+                  className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#7B4FB5]/30 bg-[#7B4FB5]/10 px-4 py-2"
                 >
                   <Sparkles className="h-4 w-4 text-[#B39DDB]" />
                   <span className="text-sm font-medium text-[#B39DDB]">
                     Beschikbaar voor nieuwe projecten
                   </span>
+                </motion.div>
+
+                {/* Social proof strip */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                  className="mb-6 flex items-center justify-center gap-2"
+                >
+                  <div className="flex -space-x-2">
+                    {["A","P","F","M","T"].map((l, i) => (
+                      <div key={i} className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-black bg-gradient-to-br from-[#7B4FB5] to-[#B39DDB] text-xs font-bold text-white">
+                        {l}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-1.5 text-sm text-white/50">
+                    <div className="flex">
+                      {[1,2,3,4,5].map(i => <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />)}
+                    </div>
+                    <span>6 tevreden klanten</span>
+                  </div>
                 </motion.div>
 
                 <motion.h2
@@ -143,9 +166,13 @@ export function CTASection() {
                 </Link>
 
                 <p className="mt-6 text-sm text-white/40">
-                  Reactie binnen 24 uur &bull; Gratis adviesgesprek &bull; Geen
-                  verplichtingen
+                  Reactie binnen 24 uur &bull; Gratis adviesgesprek &bull; Geen verplichtingen
                 </p>
+                <div className="mt-4 flex items-center justify-center gap-6 text-xs text-white/25">
+                  <span>✓ Transparante prijzen</span>
+                  <span>✓ Vanaf €1.499</span>
+                  <span>✓ Live in 2-4 weken</span>
+                </div>
               </motion.div>
             </div>
           </motion.div>

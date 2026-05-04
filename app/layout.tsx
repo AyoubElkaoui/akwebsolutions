@@ -4,6 +4,7 @@ import "./globals.css";
 import { StructuredData } from "@/components/structured-data";
 import { CookieBanner } from "@/components/cookie-banner";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -115,6 +116,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <StructuredData />
         {children}
+        <WhatsAppButton />
         <CookieBanner />
       </body>
     </html>

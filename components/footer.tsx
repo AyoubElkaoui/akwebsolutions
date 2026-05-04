@@ -8,6 +8,7 @@ const footerLinks = {
   company: [
     { name: "Over Ons", href: "/over-ons" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "Prijzen", href: "/prijzen" },
     { name: "Blog", href: "/blog" },
     { name: "Diensten", href: "/diensten" },
     { name: "Contact", href: "/contact" },

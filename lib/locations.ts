@@ -143,6 +143,150 @@ export const locations: Location[] = [
       "Soesterberg transformeert en groeit. Voor lokale ondernemers bouwen we professionele websites die meegroeien met de ontwikkelingen.",
     nabij: ["Soest", "Zeist", "Amersfoort", "Baarn"],
   },
+  {
+    stad: "Utrecht",
+    slug: "utrecht",
+    regio: "Utrecht",
+    inwoners: "375.000",
+    beschrijving:
+      "Utrecht is een van de snelst groeiende steden van Nederland. Wij bouwen websites die jouw bedrijf laten opvallen in deze competitieve markt — van de Binnenstad tot Leidsche Rijn.",
+    nabij: ["Amersfoort", "Zeist", "Nieuwegein", "Houten"],
+  },
+  {
+    stad: "Amsterdam",
+    slug: "amsterdam",
+    regio: "Noord-Holland",
+    inwoners: "930.000",
+    beschrijving:
+      "Amsterdam is het zakencentrum van Nederland. Wij bouwen snelle, professionele websites die opvallen in de drukste digitale markt van het land — van de Jordaan tot Noord.",
+    nabij: ["Almere", "Haarlem", "Amstelveen", "Zaandam"],
+  },
+  {
+    stad: "Den Haag",
+    slug: "den-haag",
+    regio: "Zuid-Holland",
+    inwoners: "560.000",
+    beschrijving:
+      "Den Haag herbergt duizenden bedrijven, overheidsinstanties en professionals. Wij bouwen websites die autoriteit uitstralen en klanten aantrekken in de stad van vrede en recht.",
+    nabij: ["Delft", "Rijswijk", "Leidschendam", "Zoetermeer"],
+  },
+  {
+    stad: "Rotterdam",
+    slug: "rotterdam",
+    regio: "Zuid-Holland",
+    inwoners: "660.000",
+    beschrijving:
+      "Rotterdam staat voor ambitie, innovatie en no-nonsense. Wij bouwen websites die net zo daadkrachtig zijn als de stad zelf — snel, sterk en resultaatgericht.",
+    nabij: ["Dordrecht", "Capelle aan den IJssel", "Schiedam", "Spijkenisse"],
+  },
+  {
+    stad: "Eindhoven",
+    slug: "eindhoven",
+    regio: "Noord-Brabant",
+    inwoners: "240.000",
+    beschrijving:
+      "Eindhoven is de design- en techhoofstad van Nederland. Voor innovatieve bedrijven in Eindhoven bouwen wij websites die net zo scherp zijn als de Brainport-mentaliteit van de stad.",
+    nabij: ["Tilburg", "Helmond", "Veldhoven", "Waalre"],
+  },
+  {
+    stad: "Haarlem",
+    slug: "haarlem",
+    regio: "Noord-Holland",
+    inwoners: "165.000",
+    beschrijving:
+      "Haarlem combineert historische charme met een bruisend ondernemersklimaat. Wij bouwen websites die jouw bedrijf in Haarlem professioneel presenteren en klanten aantrekken.",
+    nabij: ["Amsterdam", "Zaandam", "Heemstede", "Bloemendaal"],
+  },
+  {
+    stad: "Almere",
+    slug: "almere",
+    regio: "Flevoland",
+    inwoners: "220.000",
+    beschrijving:
+      "Almere groeit als geen andere stad in Nederland. Wij bouwen websites voor de ambitieuze ondernemers van Almere — modern, snel en SEO-sterk.",
+    nabij: ["Amsterdam", "Huizen", "Zeewolde", "Lelystad"],
+  },
+  {
+    stad: "Tilburg",
+    slug: "tilburg",
+    regio: "Noord-Brabant",
+    inwoners: "225.000",
+    beschrijving:
+      "Tilburg is een creatieve en innovatieve stad met een sterk MKB. Wij bouwen websites die jouw bedrijf in Tilburg online laten groeien en meer klanten aantrekken.",
+    nabij: ["Eindhoven", "Breda", "Den Bosch", "Waalwijk"],
+  },
+  {
+    stad: "Groningen",
+    slug: "groningen",
+    regio: "Groningen",
+    inwoners: "235.000",
+    beschrijving:
+      "Groningen is jong, dynamisch en vol energie. Wij bouwen websites voor Groningse ondernemers die hun bedrijf online willen laten groeien in de studentenstad van het noorden.",
+    nabij: ["Assen", "Hoogezand", "Winschoten", "Veendam"],
+  },
+  {
+    stad: "Breda",
+    slug: "breda",
+    regio: "Noord-Brabant",
+    inwoners: "185.000",
+    beschrijving:
+      "Breda heeft een bloeiend ondernemersklimaat en een sterke lokale economie. Wij bouwen professionele websites voor bedrijven in Breda die online willen groeien.",
+    nabij: ["Tilburg", "Bergen op Zoom", "Roosendaal", "Etten-Leur"],
+  },
+  {
+    stad: "Nijmegen",
+    slug: "nijmegen",
+    regio: "Gelderland",
+    inwoners: "180.000",
+    beschrijving:
+      "Nijmegen is de oudste stad van Nederland met een moderne zakelijke uitstraling. Wij bouwen websites die jouw bedrijf in Nijmegen op de kaart zetten.",
+    nabij: ["Arnhem", "Wijchen", "Beuningen", "Druten"],
+  },
+  {
+    stad: "Apeldoorn",
+    slug: "apeldoorn",
+    regio: "Gelderland",
+    inwoners: "165.000",
+    beschrijving:
+      "Apeldoorn heeft een sterk MKB-netwerk en groeiende zakelijke markt. Wij bouwen websites voor Apeldoornse ondernemers die professioneel online aanwezig willen zijn.",
+    nabij: ["Deventer", "Zutphen", "Amersfoort", "Ede"],
+  },
+  {
+    stad: "Arnhem",
+    slug: "arnhem",
+    regio: "Gelderland",
+    inwoners: "160.000",
+    beschrijving:
+      "Arnhem is een creatieve stad met een unieke ligging en sterk ondernemersklimaat. Wij bouwen professionele websites die jouw bedrijf in Arnhem online laten presteren.",
+    nabij: ["Nijmegen", "Apeldoorn", "Zevenaar", "Doetinchem"],
+  },
+  {
+    stad: "Enschede",
+    slug: "enschede",
+    regio: "Overijssel",
+    inwoners: "160.000",
+    beschrijving:
+      "Enschede is een innovatieve stad in Twente met een sterk technologisch ecosysteem. Wij bouwen websites voor Enschedese ondernemers die online willen groeien.",
+    nabij: ["Hengelo", "Almelo", "Oldenzaal", "Haaksbergen"],
+  },
+  {
+    stad: "Zaandam",
+    slug: "zaandam",
+    regio: "Noord-Holland",
+    inwoners: "160.000",
+    beschrijving:
+      "Zaandam is een actieve zakenstad direct naast Amsterdam. Wij bouwen websites voor Zaanse ondernemers die profiteren van de nabijheid van de Randstad.",
+    nabij: ["Amsterdam", "Haarlem", "Purmerend", "Landsmeer"],
+  },
+  {
+    stad: "Zoetermeer",
+    slug: "zoetermeer",
+    regio: "Zuid-Holland",
+    inwoners: "130.000",
+    beschrijving:
+      "Zoetermeer is een moderne stad in de Randstad met veel MKB-bedrijven. Wij bouwen professionele websites voor Zoetermeerse ondernemers die online willen groeien.",
+    nabij: ["Den Haag", "Delft", "Leiden", "Gouda"],
+  },
 ];
 
 export function getLocation(slug: string): Location | undefined {

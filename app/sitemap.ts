@@ -123,6 +123,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...webshopIndustryPages,
     ...standaloneServicePages,
     {
+      url: `${baseUrl}/prijzen`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/over-ons`,
       lastModified: new Date(),
       changeFrequency: "monthly",
